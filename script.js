@@ -41,17 +41,7 @@ function getall_products(){
 
         
 
-        
-        
-        
-        
-
-        let number = 9
-        
-        let array = res.products.slice(0,number)
-        array.forEach(element =>{
-
-            
+        function get_items(element){
             let items_div = document.createElement("div")
             items_div.classList.add("grid_items")
             const container = document.querySelector(".grid_container")
@@ -91,8 +81,6 @@ function getall_products(){
             for_images.append(cart_button)
             cart_button.innerHTML = "Add to cart"
 
-            
-
             let toolbar2 = document.querySelector(".img2")
 
             let toolbar1 = document.querySelector(".img1")
@@ -105,7 +93,7 @@ function getall_products(){
                 y=1
                 if (x===1){
 
-                
+                    
                     container.style.gridTemplateColumns = "auto"
                     items_div.style.display = 'flex'
                     for_titles.style.marginLeft = "300px"
@@ -157,9 +145,37 @@ function getall_products(){
                 }
             })
 
+        }
+        
+        
+        
+
+        let first_number = 0
+        let second_number = 9
+        let array = res.products.slice(first_number,second_number)
+        let show_button = document.querySelector(".show_more")
+
+        show_button.addEventListener("click", ()=>{
+            first_number = second_number
+            second_number = second_number + 9
+            array = res.products.slice(first_number,second_number)
+            array.forEach(element => {
+                get_items(element)
+
+            })
             
-           
             
+        })
+        
+       
+        
+        array.forEach(element =>{
+            get_items(element)
+
+            
+            
+
+    
             
             })
     })

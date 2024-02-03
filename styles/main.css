@@ -124,6 +124,17 @@
 
 .show_more {
     margin-top: 100px;
+    margin-left: 350px;
+    width: 163px;
+    height: 40px;
+    padding: 6px, 40px, 6px, 40px;
+    border-radius: 80px;
+    border: 1px;
+    color: #141718;
+    font-size: 15px;
+    cursor: pointer;
+
+
     
 }
 
@@ -136,3 +147,4 @@
     margin-top: 15px;
     cursor: pointer;
 }
+
