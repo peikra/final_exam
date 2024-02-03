@@ -18,10 +18,7 @@ function category(){
                 
                 
 
-               
-                
-                
-                
+              
                 
             })
             
@@ -96,20 +93,72 @@ function getall_products(){
 
             
 
-            
+            let toolbar2 = document.querySelector(".img2")
+
+            let toolbar1 = document.querySelector(".img1")
+
+            let x = 1
+            let paragraph = document.createElement("p")
+            let new_button = document.createElement("button")
+            let y = 0
+            toolbar2.addEventListener("click", ()=>{
+                y=1
+                if (x===1){
+
+                
+                    container.style.gridTemplateColumns = "auto"
+                    items_div.style.display = 'flex'
+                    for_titles.style.marginLeft = "300px"
+                    for_titles.style.marginTop = "20px"
+                    second_price.style.display = "none"
+                    text.style.width = "150px"
+
+                    
+                    paragraph.classList.add("paragr")
+                    for_titles.append(paragraph)
+                    paragraph.innerHTML = element.description
+
+                    cart_button.style.display = 'none'
+                    
+                    
+                    new_button.classList.add("new_butt")
+                    for_titles.append(new_button)
+                    new_button.innerHTML = "Add to Cart"
+                    x=x+1
+                    
+            }
+
+            else if (x===2){
+                container.style.gridTemplateColumns = "auto"
+                items_div.style.display = 'flex'
+                for_titles.style.marginLeft = "300px"
+                for_titles.style.marginTop = "20px"
+                new_button.style.display = 'block'
+                second_price.style.display = "none"
+                paragraph.style.display = 'block'
+
+            }
+            })
+
+            toolbar1.addEventListener("click", ()=> {
+                if(y===1){
+
+                
+                    container.style.gridTemplateColumns = "auto auto auto"
+                    
+                    for_titles.style.marginLeft = "0px"
+                    for_titles.style.marginTop = "0px"
+                    items_div.style.display = 'block'
+                    paragraph.style.display = 'none'
+                    new_button.style.display = 'none'
+                    second_price.style.display = 'block'
+                    
+                    x=2
+                }
+            })
 
             
            
-           
-
-
-            
-
-
-
-           
-      
-            
             
             
             })
