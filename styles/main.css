@@ -24,7 +24,7 @@
     margin-top: 15px;
     color: grey;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .second{
@@ -70,7 +70,7 @@
     display: grid;
     grid-template-columns: auto auto auto;
     column-gap: 10px;
-    row-gap: 60px;
+    row-gap: 110px;
 }
 
 .grid_items{
@@ -239,6 +239,8 @@
 
 #price1{
     text-decoration: line-through;
+    color: #6C7275;
+    font-size: 18px;
 }
 
 .forbuttons{
@@ -293,4 +295,39 @@
     background: lightgray;
     border-radius: 10px;
     
+}
+
+.product_title{
+    color: #141718;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
+
+.for_titles{
+    margin-top: 10px;
+    
+}
+
+.firstprice{
+    color: #141718;
+    font-size: 18px;
+
+}
+#discountedprice{
+    color: #141718;
+    font-size: 18px;
+
+}
+
+.secondprice{
+    color: #6C7275;
+    font-size: 18px;
+
+}
+
+p{
+    color: #6C7275;
+    font-size: 14px;
 }

@@ -44,6 +44,7 @@ function getall_products(){
         function get_items(element){
 
 
+            
             let items_div = document.createElement("div")
             items_div.classList.add("grid_items")
             const container = document.querySelector(".grid_container")
@@ -95,9 +96,12 @@ function getall_products(){
             for_images.append(cart_button)
             cart_button.innerHTML = "Add to cart"
 
+            
+            
+
            
 
-            items_div.addEventListener("click", ()=>{
+            for_images.addEventListener("click", ()=>{
                 let popup = document.querySelector(".popup")
                 popup.style.display = "block"
                 
@@ -127,12 +131,16 @@ function getall_products(){
                     for_titles.style.marginLeft = "300px"
                     for_titles.style.marginTop = "20px"
                     second_price.style.display = "none"
+                    
                     text.style.width = "150px"
+                    
     
                         
                     paragraph.classList.add("paragr")
                     for_titles.append(paragraph)
                     paragraph.innerHTML = element.description
+                    paragraph.style.marginTop="15px"
+                    paragraph.style.marginBottom="15px"
     
                     cart_button.style.display = 'none'
                         
@@ -173,8 +181,9 @@ function getall_products(){
 
                     container.style.gridTemplateColumns = "auto auto auto"
                     
+                    text.style.width = "250px"
                     for_titles.style.marginLeft = "0px"
-                    for_titles.style.marginTop = "0px"
+                    for_titles.style.marginTop = "10px"
                     items_div.style.display = 'block'
                     paragraph.style.display = 'none'
                     new_button.style.display = 'none'
@@ -264,6 +273,8 @@ function getall_products(){
         
         
         
+        
+        
 
         let first_number = 0
         let second_number = 9
@@ -282,6 +293,8 @@ function getall_products(){
                 
                 
         })
+
+       
 
         
         
