@@ -17,6 +17,9 @@ function category(){
                 title.innerHTML = list.innerHTML
                 
                 
+                
+                
+                
 
               
                 
@@ -45,6 +48,7 @@ function getall_products(){
 
 
             
+            
             let items_div = document.createElement("div")
             items_div.classList.add("grid_items")
             const container = document.querySelector(".grid_container")
@@ -52,6 +56,13 @@ function getall_products(){
             let for_images = document.createElement("div")
             for_images.classList.add("for_images")
             items_div.append(for_images)
+            let for_discount = document.createElement("div")
+            for_discount.classList.add("for_discount")
+            for_images.append(for_discount)
+            let discount = document.createElement("h3")
+            discount.classList.add("discount")
+            for_discount.append(discount)
+            discount.innerHTML = `-${element.discountPercentage}%`
             let img = document.createElement("img")
             img.classList.add("images")
             for_images.append(img)
@@ -193,6 +204,9 @@ function getall_products(){
             })
 
         }
+
+      
+    
   
         
         function current_post(id){
@@ -287,6 +301,7 @@ function getall_products(){
             second_number = second_number + 9
             array = res.products.slice(first_number,second_number)
             array.forEach(element => {
+                
                 get_items(element)
     
             })
@@ -301,10 +316,18 @@ function getall_products(){
        
        
 
-       
         
+       
+        let x =30
         array.forEach(element =>{
+            
             get_items(element)
+
+            
+          
+            
+            
+           
 
             
 

@@ -80,9 +80,9 @@
 }
 
 .for_images{
-    padding: 30px 15px 20px 15px;
+    padding: 15px 15px 20px 15px;
     background-color: lightgrey;
-    height: 300px;
+    height: 308px;
     
 }
 
@@ -330,4 +330,21 @@
 p{
     color: #6C7275;
     font-size: 14px;
+}
+
+.discount{
+    font-size: 16px;
+    text-align: center;
+    color: white;
+    padding-top: 3px;
+    
+}
+
+.for_discount{
+    margin-bottom: 5px;
+    width: 71px;
+    height: 24px;
+    background-color: #38CB89;
+    border-radius: 8px;
+
 }
