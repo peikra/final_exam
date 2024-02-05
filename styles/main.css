@@ -271,3 +271,26 @@
     margin-top: 35px;
 
 }
+
+.scrollbar{
+    width: 200px;
+    
+}
+
+.scrolldiv{
+    width: 200px;
+    height: 300px;
+    overflow: hidden;
+    overflow-y: scroll;
+    
+}
+
+::-webkit-scrollbar{
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: lightgray;
+    border-radius: 10px;
+    
+}
