@@ -41,10 +41,7 @@
     height: 50px;
 }
 
-.img2{
-    
-    
-}
+
 .first_image{
     margin-left: 60px;
     margin-top: 10px;
@@ -148,3 +145,129 @@
     cursor: pointer;
 }
 
+.star_img{
+    width: 14px;
+    height: 14px;
+}
+
+.for_stars{
+    display: flex;
+    gap: 6px;
+}
+
+.for_stars1{
+    display: flex;
+    gap: 6px;
+
+}
+
+.popup{
+    position: fixed;
+    left: 51%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 1180px;
+    height: 600px;
+    background-color: #FFFFFF;
+    border-radius: 35px;
+    display: none;
+    padding-left: 20px;
+    
+}
+
+.second_div{
+    display: flex;
+    
+
+}
+
+.three_image {
+    display: flex;
+    margin-top: 30px;
+    gap: 15px;
+}
+
+.image1 {
+    width: 167px;
+    height: 167px;
+}
+
+.image2 {
+    width: 167px;
+    height: 167px;
+}
+
+.image3 {
+    width: 167px;
+    height: 167px;
+}
+
+.for_mainimage{
+    width: 525px;
+    height: 380px;
+    background-color: lightgray;
+    padding-left: 100px;
+    padding-top: 30px;
+    margin-top: 12px;
+}
+
+.main_image{
+    width: 300px;
+    height: 300px;
+}
+
+.for_description{
+    margin-top: 10px;
+    margin-left: 50px;
+
+}
+
+.main_title{
+    margin-top: 25px;
+    font-size: 30px;
+}
+
+#decript{
+    margin-top: 20px;
+}
+
+.forprices{
+    display: flex;
+    margin-top: 20px;
+    gap: 15px;
+}
+
+#price1{
+    text-decoration: line-through;
+}
+
+.forbuttons{
+    margin-top: 25px;
+}
+
+.cart1{
+    width: 508px;
+    background-color: #141718;
+    color: white;
+    height: 52px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 12px;
+
+}
+
+.wishlist{
+    width: 508px;
+    height: 52px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: white;
+
+}
+
+.for_category{
+    display: flex;
+    gap: 28px;
+    margin-top: 35px;
+
+}
