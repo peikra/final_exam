@@ -11,14 +11,46 @@ function category(){
             list.innerHTML = product
             let unorderd_list = document.querySelector(".categories_list")
             unorderd_list.append(list)
+            
 
             list.addEventListener('click', ()=> {
+
                 
                 title.innerHTML = list.innerHTML
+
+
+                let main_div = document.querySelector(".grid_container")
+                let items = Array.from(main_div.children)
+
+               
+
+                for(let i of items){
+                    
+                    
+                        
+                    i.style.display = 'block'
+                        
+
+                        
+                    
+                }
+                
+                for (let i of items){
+                    let category = i.childNodes[1].childNodes[2].innerHTML
+
+                    if(category!=title.innerHTML){
+                        i.style.display = 'none'
+                    }
+
+                    
+                    
+                }
+                
                 
                 
                 
             })
+            
             
         });
         
@@ -30,7 +62,7 @@ category()
 
 function getall_products(){
     let all_products = 
-    fetch('https://dummyjson.com/products')
+    fetch('https://dummyjson.com/products?limit=100')
     .then(res => res.json())
     .then((res) =>{
 
@@ -76,6 +108,13 @@ function getall_products(){
             text.classList.add("product_title")
             for_titles.append(text)
             text.innerHTML = element.title
+
+            let cat = document.createElement("h3")
+            cat.classList.add("categ")
+            for_titles.append(cat)
+            cat.innerHTML = element.category
+
+
             let prices_div = document.createElement("div")
             prices_div.classList.add("for_prices")
             for_titles.append(prices_div)
@@ -106,7 +145,7 @@ function getall_products(){
             let select = document.getElementById("sort")
             let ar =[]
 
-            console.log(rating.innerHTML)
+                
 
             for (let i of li){
                 
@@ -197,11 +236,13 @@ function getall_products(){
             
             toolbar2.addEventListener("click", ()=>{
                  y=1
+                 
                 if (x===1){
 
-                        
+                    
                     container.style.gridTemplateColumns = "auto"
                     items_div.style.display = 'flex'
+                    items_div.style.flexDirection = 'row'
                     for_titles.style.marginLeft = "300px"
                     for_titles.style.marginTop = "20px"
                     second_price.style.display = "none"
@@ -222,6 +263,8 @@ function getall_products(){
                     new_button.classList.add("new_butt")
                     for_titles.append(new_button)
                     new_button.innerHTML = "Add to Cart"
+
+                    
                     x=x+1
                         
             }
@@ -343,17 +386,23 @@ function getall_products(){
         let second_number = 9
         let array = res.products.slice(first_number,second_number)
         let show_button = document.querySelector(".show_more")
+
+        
         
         show_button.addEventListener("click", ()=>{
 
+           
             let select = document.getElementById("sort")
             select.value = "Default"
            
             first_number = second_number
             second_number = second_number + 9
             array = res.products.slice(first_number,second_number)
+
+            
             
             array.forEach(element => {
+                
                 
                 get_items(element)
                 
