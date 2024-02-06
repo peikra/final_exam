@@ -18,18 +18,10 @@ function category(){
                 
                 
                 
-                
-                
-
-              
-                
             })
-            
-    
             
         });
         
-
     })
        
 }
@@ -45,9 +37,6 @@ function getall_products(){
         
 
         function get_items(element){
-
-
-            
             
             let items_div = document.createElement("div")
             items_div.classList.add("grid_items")
@@ -76,7 +65,7 @@ function getall_products(){
 
             for_stars.classList.add("for_stars")
             for_titles.append(for_stars)
-            
+
             for (let i = 0; i < Math.ceil(element.rating); i++){
                 let star = document.createElement("img")
                 star.classList.add("star_img")
@@ -106,6 +95,80 @@ function getall_products(){
             cart_button.classList.add("cart_button")
             for_images.append(cart_button)
             cart_button.innerHTML = "Add to cart"
+
+            let rating = document.createElement("h3")
+            rating.classList.add("rating")
+            rating.innerHTML = element.rating
+            prices_div.append(rating)
+
+            let field = document.querySelector(".grid_container")
+            let li = Array.from(field.children)
+            let select = document.getElementById("sort")
+            let ar =[]
+
+            console.log(rating.innerHTML)
+
+            for (let i of li){
+                
+                ar.push(i)
+            }
+            
+
+            select.onchange = sortingValue
+
+            function sortingValue(){
+                if (this.value === 'Default'){
+                    while(field.firstChild){
+                        field.removeChild(field.firstChild)
+                    }
+                    field.append(...ar)
+                }
+                if (this.value === 'Price'){
+                    sortElem(field,li)
+                }
+
+                if (this.value === 'Rating'){
+                    sortelem1(field,li)
+                }
+
+                
+            }
+            function sortelem1(field,li){
+                let sort
+
+                sort = li.sort((a,b)=>{
+                    let ax = a.querySelector(".rating").innerHTML
+                    let new_ax = parseFloat(ax)
+                    let bx = b.querySelector(".rating").innerHTML
+                    let new_bx = parseFloat(bx)
+
+                    return new_ax - new_bx
+                })
+                while(field.firstChild){
+                    field.removeChild(field.firstChild)
+                }
+                field.append(...sort)
+
+
+                
+            }
+
+            function sortElem(field,li){
+                let sortli;
+                
+                sortli= li.sort((a,b) =>{
+                    let ax = a.querySelector(".firstprice").innerHTML.slice(1)
+                    let new_a = parseFloat(ax)
+                    let bx = b.querySelector(".firstprice").innerHTML.slice(1)
+                    let new_bx = parseFloat(bx)
+                    
+                    return new_a - new_bx
+                })
+                while(field.firstChild){
+                    field.removeChild(field.firstChild)
+                }
+                field.append(...sortli)
+            }
 
             
             
@@ -205,10 +268,6 @@ function getall_products(){
 
         }
 
-      
-    
-  
-        
         function current_post(id){
             let all_products = fetch(`https://dummyjson.com/products/${id}`)
             .then(res => res.json())
@@ -272,22 +331,12 @@ function getall_products(){
             });
 
             popup.style.display = 'block';
-            
-
-               
-
-               
+        
 
             }))
 
-        
-
 
         }
-        
-        
-        
-        
         
 
         let first_number = 0
@@ -296,44 +345,27 @@ function getall_products(){
         let show_button = document.querySelector(".show_more")
         
         show_button.addEventListener("click", ()=>{
+
+            let select = document.getElementById("sort")
+            select.value = "Default"
            
             first_number = second_number
             second_number = second_number + 9
             array = res.products.slice(first_number,second_number)
+            
             array.forEach(element => {
                 
                 get_items(element)
+                
     
             })
                 
                 
         })
 
-       
-
-        
-        
-       
-       
-
-        
-       
-        let x =30
         array.forEach(element =>{
             
             get_items(element)
-
-            
-          
-            
-            
-           
-
-            
-
-           
-            
-            
 
     
             

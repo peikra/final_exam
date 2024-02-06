@@ -172,6 +172,7 @@
     border-radius: 35px;
     display: none;
     padding-left: 20px;
+    box-shadow: 12px 12px 2px 1px rgb(15, 15, 17);
     
 }
 
@@ -347,4 +348,8 @@ p{
     background-color: #38CB89;
     border-radius: 8px;
 
+}
+
+.rating{
+    display: none;
 }
