@@ -443,19 +443,7 @@ function getall_products(){
                 
     
             })
-            let main = document.querySelector(".grid_container")
-            let items = Array.from(main.children)
-
-            for (let i of items){
-               console.log(i.style.display)
-            }
-
-           
-
-
-
-           
-                
+                   
                 
         })
 
