@@ -70,12 +70,14 @@
     display: grid;
     grid-template-columns: auto auto auto;
     column-gap: 10px;
-    row-gap: 110px;
+    row-gap: 30px;
 }
 
 .grid_items{
     width: 300px;
-    height: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
    
     
 }

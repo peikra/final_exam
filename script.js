@@ -26,13 +26,9 @@ function category(){
 
                 for(let i of items){
                     
-                    
-                        
-                    i.style.display = 'block'
+                    i.style.display = 'flex'
                         
 
-                        
-                    
                 }
                 
                 for (let i of items){
@@ -233,11 +229,30 @@ function getall_products(){
             let paragraph = document.createElement("p")
             let new_button = document.createElement("button")
             let y = 0
+
+            
             
             toolbar2.addEventListener("click", ()=>{
+                let main = document.querySelector(".grid_container")
+                let items = Array.from(main.children)
+    
+                for(let i of items){
+                    i.style.display='flex'
+                    i.style.flexDirection='row'
+                }
+                
+                
+
+                
+
+               
+                
+
+
                  y=1
                  
                 if (x===1){
+                   
 
                     
                     container.style.gridTemplateColumns = "auto"
@@ -277,37 +292,57 @@ function getall_products(){
                 new_button.style.display = 'block'
                 second_price.style.display = "none"
                 paragraph.style.display = 'block'
+                
+                
     
              }
+             
+           
          })
-            
-            
-            
+        
 
-            toolbar1.addEventListener("click", ()=> {
-                if(y===1){
+         toolbar1.addEventListener("click", ()=> {
 
-                    items_div.addEventListener("mouseenter", ()=>{
-                        cart_button.style.display = 'block'
+           
+                
 
-                    })
-
-                    items_div.addEventListener("mouseleave", ()=>{
-                        cart_button.style.display = 'none'
-                    })
-
-                    container.style.gridTemplateColumns = "auto auto auto"
-                    
-                    text.style.width = "250px"
-                    for_titles.style.marginLeft = "0px"
-                    for_titles.style.marginTop = "10px"
-                    items_div.style.display = 'block'
-                    paragraph.style.display = 'none'
-                    new_button.style.display = 'none'
-                    second_price.style.display = 'block'
-                    x=2
+            if(y===1){
+                let main = document.querySelector(".grid_container")
+                let items = Array.from(main.children)
+    
+                for(let i of items){
+                    i.style.display='flex'
+                    i.style.flexDirection='column'
                 }
-            })
+                
+
+                items_div.addEventListener("mouseenter", ()=>{
+                    cart_button.style.display = 'block'
+
+                })
+
+                items_div.addEventListener("mouseleave", ()=>{
+                    cart_button.style.display = 'none'
+                })
+
+              
+
+                container.style.gridTemplateColumns = "auto auto auto"
+                
+                text.style.width = "250px"
+                for_titles.style.marginLeft = "0px"
+                for_titles.style.marginTop = "10px"
+                items_div.style.display = 'block'
+                paragraph.style.display = 'none'
+                new_button.style.display = 'none'
+                second_price.style.display = 'block'
+                x=2
+            }
+        })
+            
+            
+            
+
 
         }
 
@@ -408,6 +443,18 @@ function getall_products(){
                 
     
             })
+            let main = document.querySelector(".grid_container")
+            let items = Array.from(main.children)
+
+            for (let i of items){
+               console.log(i.style.display)
+            }
+
+           
+
+
+
+           
                 
                 
         })
